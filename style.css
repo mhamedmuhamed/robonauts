@@ -108,7 +108,7 @@ button{
   font-weight:700;
 }
 
-/* MEMBERS GRID – 4 PER ROW */
+/* MEMBERS GRID */
 .grid-people{
   width:min(1200px,92%);
   margin:0 auto;
@@ -137,22 +137,16 @@ button{
 
 /* SPONSORS */
 .sponsors-grid{
-  width:100%;
+  width:fit-content;
   margin:40px auto 0;
   display:flex;
   gap:50px;
   align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;         /* ✅ يمنع الهروب يمين على شاشات ضيقة */
-  overflow-x:visible;     /* ✅ يلغي السحب الأفقي */
-  padding:0 10px;
-  box-sizing:border-box;
+  overflow-x:auto;
 }
 
 .sponsors-grid img{
   height:100px;
-  max-width:220px;
-  object-fit:contain;
 }
 
 /* FOOTER */
@@ -175,6 +169,58 @@ footer{
   height:45px;
 }
 
+/* CONTACT FORM */
+.contact-form{
+  width:min(760px,92%);
+  margin:30px auto 0;
+  text-align:left;
+}
+
+.contact-field{
+  margin-bottom:18px;
+}
+
+.contact-field label{
+  display:block;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.contact-field input,
+.contact-field textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid rgba(0,0,0,0.15);
+  border-radius:6px;
+  font-size:16px;
+  box-sizing:border-box;
+}
+
+.contact-field textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.contact-submit{
+  display:block;
+  margin:24px auto 0;
+  background:#000;
+  color:#fff;
+  padding:14px 40px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* ✅ SUCCESS MESSAGE (new) */
+.form-status{
+  margin-top:14px;
+  font-weight:800;
+  color:#1f7a3b;  /* أخضر لطيف */
+  text-align:center;
+  min-height:22px; /* عشان ما يقفز التصميم */
+}
+
 /* RESPONSIVE */
 @media(max-width:1000px){
   .grid-people{
@@ -186,14 +232,26 @@ footer{
   header h1{ font-size:2.1rem; }
   .grid-people{ grid-template-columns:1fr; }
   .home-logo{ width:170px; height:170px; }
+}
 
-  /* ✅ Sponsors موبايل: حجم أصغر + ترتيب أحسن */
-  .sponsors-grid{
-    gap:18px;
-    padding:0 12px;
-  }
-  .sponsors-grid img{
-    height:70px;
-    max-width:45vw;
+
+/* TEAM NUMBER UNDER TITLE – CENTER */
+.team-number-center{
+  margin:12px 0 6px;
+
+  font-size:56px;          /* كبير وواضح */
+  font-weight:900;
+  letter-spacing:4px;
+
+  color:#a93d6f;           /* زهري متناسق */
+  text-align:center;
+
+  user-select:none;
+}
+@media (max-width:600px){
+  .team-number-center{
+    font-size:38px;
+    letter-spacing:3px;
   }
 }
+
